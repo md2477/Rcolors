@@ -28,7 +28,13 @@ shinyUI(
                 "Blue",
                 min = 0,
                 max = 255,
-                value = 0)
+                value = 0),
+            
+            selectInput(
+                inputId = "rColors",
+                label   = "R colors",
+                choices = as.list(colors())
+                )
             
         ),
           
