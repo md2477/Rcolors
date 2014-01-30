@@ -45,9 +45,7 @@ shinyUI(
                     type = 'text/css', 
                     href = 'style.css')),
             
-            h2("This is the color you selected:"),
-            htmlOutput("colorBox"),
-            htmlOutput("rgbBreakdown")
+            htmlOutput("colorBox")
         )
     )
 )
