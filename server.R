@@ -10,8 +10,11 @@ shinyServer(
         })
         
         output$colorSquare <- renderText({
-            
             HTML(sprintf("<div style='height: 300px; width: 300px; background-color: %s'></div>", colorCode()))
+        })
+        
+        output$rgbBreakdown <- renderText({
+            HTML(sprintf("<h2>%s</h2>", colorCode()))
         })
   
     }
