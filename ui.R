@@ -6,7 +6,7 @@ shinyUI(
   
         # Application title
         headerPanel("R Color Explorer"),
-          
+        
         # Sidebar with a slider input for number of observations
         sidebarPanel(
             
@@ -35,15 +35,18 @@ shinyUI(
                      <br>Code available at <a href='https://github.com/mdec/Rcolors' target='_blank'>https://github.com/mdec/Rcolors</a>.
                      <br>See more at <a href='http://www.showmeshiny.com' target='_blank'>showmeshiny.com</a> and follow <a href='http://www.twitter.com/showmeshiny' target='_blank'>@showmeshiny</a>."))
             
-            
-            
-            
         ),
           
         # Show a plot of the generated distribution
         mainPanel(
+            tags$head(
+                tags$link(
+                    rel  = 'stylesheet',
+                    type = 'text/css', 
+                    href = 'style.css')),
+            
             h2("This is the color you selected:"),
-            htmlOutput("colorSquare"),
+            htmlOutput("colorBox"),
             htmlOutput("rgbBreakdown")
         )
     )
