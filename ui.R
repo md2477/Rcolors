@@ -21,7 +21,8 @@ shinyUI(
         # Show a plot of the generated distribution
         mainPanel(
             h2("This is the color you selected:"),
-            htmlOutput("colorSquare")            
+            htmlOutput("colorSquare"),
+            htmlOutput("rgbBreakdown")
         )
     )
 )
