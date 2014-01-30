@@ -5,13 +5,13 @@ shinyUI(
     pageWithSidebar(
   
         # Application title
-        headerPanel("New Application"),
+        headerPanel("R Color Explorer"),
           
         # Sidebar with a slider input for number of observations
         sidebarPanel(
             
             selectInput(
-                inputId = "rColors",
+                inputId = "rColorSelected",
                 label   = "R colors",
                 choices = as.list(colors())
                 )
@@ -20,7 +20,8 @@ shinyUI(
           
         # Show a plot of the generated distribution
         mainPanel(
-            htmlOutput("rgb")            
+            h2("This is the color you selected:"),
+            htmlOutput("colorSquare")            
         )
     )
 )

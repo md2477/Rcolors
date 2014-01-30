@@ -4,10 +4,14 @@ library(shiny)
 shinyServer(
     function(input, output) {
 
+        colorCode <- reactive({
+            rgbValues <- as.raw(col2rgb(input$rColorSelected))
+            colorCode <- sprintf("#%s%s%s", rgbValues[1], rgbValues[2], rgbValues[3])
+        })
         
-        output$rgb <- renderText({
-            HTML(sprintf("<div height='200' width='200' style='background-color: %s'>hey</div>", rgbOut()))
-            #HTML("hey")
+        output$colorSquare <- renderText({
+            
+            HTML(sprintf("<div style='height: 300px; width: 300px; background-color: %s'></div>", colorCode()))
         })
   
     }
